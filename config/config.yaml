@@ -1,0 +1,15 @@
+experiment_class: 'haas_online'
+
+mqtt:
+  broker_address: 128.237.92.30
+  broker_port: 1883 
+  username: admin
+  password: CMUmfi2024!
+  group_name: Mill-18
+  node_name: test-haas-node-2
+  tls_enabled: False
+  debug: True
+
+mtconnect:
+  agent_ip: 192.168.1.100
+  agent_url: 'http://192.168.1.100:8082/'
