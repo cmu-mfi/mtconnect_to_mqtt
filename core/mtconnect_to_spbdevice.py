@@ -10,6 +10,8 @@ import xmltodict
 
 from mqtt_spb_wrapper import MqttSpbEntityDevice
 
+STREAM_RATE = 10 # Hz
+
 class MTConnectToSPBDevice:
     def __init__(self, data_obj) -> None:
         script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -101,4 +103,6 @@ class MTConnectToSPBDevice:
             self.components[component_id].publish_data()
 
             print(f"Data published for component {component_id}")
-            time.sleep(1)
+            component_count = len(self.components)
+            sleep_time = 1/(STREAM_RATE * component_count)
+            time.sleep(sleep_time)
